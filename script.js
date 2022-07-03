@@ -47,19 +47,30 @@ function update()
 		}
 		else if (this.name == 'alignment')
 		{
+			var color = $('#namecolor').val();
 			var words = value.split(' ');
-			var pickers = $('.alignmentcolors');
+			var [alMajor, ...alMinor] = value.split(' ');
+			/*var pickers = $('.alignmentcolors');
 			for (i in words)
 			{
 				if(i==1) words[i] = '<span style="color:'+pickers[0].value+'>(</span><span style="color:'+pickers[i].value+'">'+words[i]+'</span><span style="color:'+pickers[0].value+'>)</span>'; else words[i] = '<span style="color:'+pickers[i].value+'">'+words[i]+'</span>';
-			}
+				console.log(i);
+				console.log(i==1);
+			}*/
 			value = words.join(' ');
+			if(alMinor.length) {
+				alMinor = " (<span style='color:#49a9d0'>"+alMinor.map(capitalize).join(' ')+"</span>)";
+			} else {
+				alMinor = "";
+			}
+			value = "<span style='color:" + color + "'>" + capitalize(alMajor) + alMinor + "</span>";
 			$(edit).html(value);
 		}
 		else if (this.name == 'rolename')
 		{
 			var color = $('#namecolor').val();
 			$(edit).html('<span style="color:'+color+'">'+value+'</span>');
+			//$(edit).html(format(value, color));
 		}
 		else
 		{
@@ -82,4 +93,27 @@ function generate()
 			$('#imglink')[0].download = "myrole.png";
 		}
 	});
+}
+function capitalize(str) {
+	var strings = str.split(' ');
+	str = '';
+	for (x = 0; x < strings.length; x++) {
+		strings[x] = strings[x].substring(0, 1).toUpperCase() + strings[x].substring(1, strings[x].length) + ' ';
+		str += strings[x];
+	}
+
+	return str.trim();
+}
+
+function format(str, color) {
+	if (color == undefined) {
+		color = 'black';
+	}
+	var strings = str.split(' ');
+	str = '';
+	for (x = 0; x < strings.length; x++) {
+		strings[x] = strings[x].substring(0, 1).toUpperCase() + strings[x].substring(1, strings[x].length) + ' ';
+		str += strings[x];
+	}
+	return "<h2 style='color:" + color + "'>" + str + '</h2>';
 }
