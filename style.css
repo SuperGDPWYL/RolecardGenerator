@@ -1,0 +1,156 @@
+.rolecardcontainer
+{
+	overflow:auto;
+	float:left;
+	width:30%;
+}
+.rolecard
+{
+	background:url("back.jpg");
+	background-size: 100% 100%;
+	height: 373px;
+    width: 267px;
+    text-shadow: 0px 4px 6px #191919;
+    color:white;
+    position:relative;
+    padding:20px;
+    padding-top:10px;
+    float:left;
+}
+.overlay
+{
+position:absolute;
+left:12px;
+top:12px;
+right:12px;
+bottom:10px;
+z-index: 1;
+opacity:0.3;
+background:black;
+}
+h2
+{
+	text-align:center;
+	z-index:2;
+}
+.rolecard .abilities
+{
+	float: left;
+    width: 100%;
+    margin:0;
+    padding:0;
+    position:relative;
+}
+.rolecard .aligntext, .header, .alignment, #rolename, #alignment, #abilityid, #attributesid, .goal
+{
+	position:relative;
+	z-index:2;
+}
+.abilities li
+{
+	list-style:none;
+	margin:0;
+	padding:0;
+	position:relative;
+}
+.abilities li:before
+{
+	content:'-';
+	position:absolute;
+	left:-5px;
+}
+.abilities li:empty:before
+{
+	content:'';
+	display:block;
+	height:20px;
+}
+.goal
+{
+	display: block;
+    color: white;
+    position: absolute;
+    left: 27px;
+    bottom: 20px;
+}
+.userinput
+{
+	float:left;
+	overflow:auto;
+	padding-right:0px;
+}
+.colorcontainer
+{
+	float:left;
+	margin-top:6px;
+}
+.colorcontainer ul
+{
+	list-style:none;
+	padding:0;
+	margin:0;
+	padding-left:5px;
+}
+.colorcontainer ul li
+{
+	padding-top:10px;
+}
+.colorpicker
+{
+    width: 15px;
+    height: 15px;
+}
+.inputlist
+{
+	list-style:none;
+	margin:0;
+	margin-top:10px;
+}
+.inputlist li
+{
+	position:relative;
+	width:100%;
+	padding-top:10px;
+	overflow-y:auto;
+}
+.inputlist li *
+{
+	float:left;
+	display:block;
+	padding:0;
+	margin:0;
+}
+.inputlist li input
+{
+	float:right;
+	width: 60%;
+}
+.inputlist li p
+{
+	width:30%;
+}
+.inputlist li textarea
+{
+	width:98%;
+	height:100px;
+	margin:0;
+	margin-bottom:20px;
+	float:right;
+}
+.header
+{
+	margin:0;
+	padding:0;
+}
+#submit
+{
+	
+}
+.message, canvas
+{
+	float:left;
+}
+.message
+{
+	margin-left: 10px;
+}
