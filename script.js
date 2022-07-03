@@ -51,7 +51,7 @@ function update()
 			var pickers = $('.alignmentcolors');
 			for (i in words)
 			{
-				words[i] = '<span style="color:'+pickers[i].value+'">'+words[i]+'</span>';
+				if(i==1) words[i] = '<span style="color:'+pickers[0].value+'>(</span><span style="color:'+pickers[i].value+'">'+words[i]+'</span><span style="color:'+pickers[0].value+'>)</span>'; else words[i] = '<span style="color:'+pickers[i].value+'">'+words[i]+'</span>';
 			}
 			value = words.join(' ');
 			$(edit).html(value);
